@@ -10,6 +10,8 @@ import 'package:food_delivery_app/models/food.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:provider/provider.dart';
 
+import 'food_page.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -48,6 +50,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           final food = categoryMenu[index];
           //return food tile Ui
           return MyFoodTile(food: food, onTab: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => FoodPage(food: food)
+          ));
 
 
           },);
